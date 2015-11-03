@@ -1,18 +1,4 @@
 // multiply each element of array using map 
-var multBy2a = function(arr) {
-  newarr = [];
-  for (i in arr) {
-    newarr[i] = 2 * arr[i];
-  }
-  return newarr;
-};
-var multBy2b = function(arr) {
-  var newarr = [];
-  for (var i in arr) {
-    newarr[i] = 2 * arr[i];
-  }
-  return newarr;
-};
 var doubleItem = function(item) {
   return item * 2;  // may be more complex or reusable function
 };
@@ -32,16 +18,6 @@ var filterBigF = function(arr) {
 //});
   return arr.filter(isBiggerThan16);
 };
-var filterBigA = function(arr) {
-  var newarr = [];
-  var j = 0;
-  for (var i in arr) {
-    if (arr[i] > 16) {
-      newarr[j++] = arr[i];
-    }
-  }
-  return newarr;
-};
 // return operation on all elements using reduce
 var add2 = function(a, b) {
   return a + b;
@@ -51,13 +27,6 @@ var sumF = function(arr) {
 //  return a + b;
 //});
   return arr.reduce(add2);
-};
-var sumA = function(arr) {
-  var sum = 0;
-  for (i in arr) {
-    sum += arr[i];
-  }
-  return sum;
 };
 
 window.onload = function() {

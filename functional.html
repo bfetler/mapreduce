@@ -4,13 +4,27 @@
     <meta charset="utf-8" />
     <title>FP Test</title>
     <style>
-      #input  { background-color: #aaf; }
+      #input {
+        width: 25%;
+        margin: 0 10px 20px 10px;
+        background-color: #aaf;
+      }
       .click {
-        display: block-inline;
+        display: inline-block;
+        width: 25%;
+        margin: 0 10px 0 10px;
+        font-size: 110%;
+        font-style: bold;
         background-color: #faa;
       }
-      .output { background-color: #afa; }
+      .output {
+        display: inline-block;
+        width: 25%;
+        margin: 20px 10px 0 10px;
+        background-color: #afa;
+      }
     </style>
+    <!--script src='declarative.js'></script!-->
     <script src='functional.js'></script>
   </head>
   <body>
@@ -21,9 +35,10 @@ file:///Users/bfetler/software/jscode/functional.html
     </a></h2>
     <h3 id="input"></h3>
 
-    <h3 id="mapIt" class="click">click for map output</h3>
-    <h3 id="filterIt" class="click">click for filter output</h3>
-    <h3 id="reduceIt" class="click">click for reduce (sum) output</h3>
+    <button id="mapIt" class="click">click for map output</button>
+    <button id="filterIt" class="click">click for filter output</button>
+    <button id="reduceIt" class="click">click for reduce (sum) output</button>
+    <br/>
 
     <h3 id="mapOutput" class="output">map output</h3>
     <h3 id="filterOutput" class="output">filter output</h3>
