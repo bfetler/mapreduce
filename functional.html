@@ -4,8 +4,12 @@
     <meta charset="utf-8" />
     <title>FP Test</title>
     <style>
-      #clickme { background-color: #aaf; }
-      #output  { background-color: #afa; }
+      #input  { background-color: #aaf; }
+      .click {
+        display: block-inline;
+        background-color: #faa;
+      }
+      .output { background-color: #afa; }
     </style>
     <script src='functional.js'></script>
   </head>
@@ -15,7 +19,14 @@
     <a href="file:///Users/bfetler/software/jscode/functional.html">
 file:///Users/bfetler/software/jscode/functional.html
     </a></h2>
-    <h3 id="clickme">click me for output</h3>
-    <h3 id="output">output</h3>
+    <h3 id="input"></h3>
+
+    <h3 id="mapIt" class="click">click for map output</h3>
+    <h3 id="filterIt" class="click">click for filter output</h3>
+    <h3 id="reduceIt" class="click">click for reduce (sum) output</h3>
+
+    <h3 id="mapOutput" class="output">map output</h3>
+    <h3 id="filterOutput" class="output">filter output</h3>
+    <h3 id="reduceOutput" class="output">reduce sum output</h3>
   </body>
 </html>
