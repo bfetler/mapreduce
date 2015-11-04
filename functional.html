@@ -2,53 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>FP Test</title>
+    <title>Functional Programming</title>
     <style>
+      body {
+        background-color: #dcf;
+      }
       #input {
         display: inline-block;
-        width: 43%;
-        margin: 0 20% 20px 20%;
-        border-radius: 10px;
+        width: 40%;
+        margin: 0 10px 20px 10px;
         text-align: center;
-        background-color: #aaf;
+        background-color: #ffa;
       }
       .click {
         display: inline-block;
-        width: 25%;
+        width: 20%;
         margin: 0 10px 0 10px;
         border-radius: 10px;
         font-size: 110%;
         font-style: bold;
-        background-color: #faa;
+        background-color: #afa;
       }
       .output {
         display: inline-block;
-        width: 25%;
+        width: 20%;
         margin: 20px 10px 0 10px;
-        border-radius: 10px;
         text-align: center;
-        background-color: #afa;
+        background-color: #fff;
+      }
+      .buffer {
+        display: inline-block;
+        width: 110px;
+        margin: 0 10px 0 10px;
+        text-align: right;
       }
     </style>
     <!--script src='imperative.js'></script!-->
     <script src='functional.js'></script>
   </head>
   <body>
-    <h1>This is a Functional Programming JS example.</h1>
-    <h2>Browse to it using
-    <a href="file:///Users/bfetler/software/jscode/functional.html">
-file:///Users/bfetler/software/jscode/functional.html
-    </a></h2>
+    <h1>Functional Programming in JavaScript</h1>
+    <h2>A few simple examples</h2>
+    <h3 class="buffer">Input Array:</h3>
     <h3 id="input"></h3>
     <br/>
 
-    <button id="mapIt" class="click">click for map output</button>
-    <button id="filterIt" class="click">click for filter output</button>
-    <button id="reduceIt" class="click">click for reduce (sum) output</button>
+    <h3 class="buffer">Function:</h3>
+    <button id="mapIt" class="click">map</button>
+    <button id="filterIt" class="click">filter</button>
+    <button id="reduceIt" class="click">reduce</button>
     <br/>
 
-    <h3 id="mapOutput" class="output">map output</h3>
-    <h3 id="filterOutput" class="output">filter output</h3>
-    <h3 id="reduceOutput" class="output">reduce sum output</h3>
+    <h3 class="buffer"></h3>
+    <h3 id="mapOutput" class="output">output</h3>
+    <h3 id="filterOutput" class="output">output</h3>
+    <h3 id="reduceOutput" class="output">output</h3>
   </body>
 </html>
