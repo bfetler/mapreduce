@@ -1,3 +1,6 @@
+// functional programming
+// (actually it's declarative, opposite of imperative)
+
 // multiply each element of array using map 
 var doubleItem = function(item) {
   return item * 2;  // may be more complex or reusable function
