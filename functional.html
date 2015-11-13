@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Functional Programming</title>
+    <title>JS MapReduce</title>
     <style>
       body {
         background-color: #dcf;
+        background: linear-gradient(to left, #fcf, #9cf, #6cf);
+        background: linear-gradient(90deg, #bcf, #7cf, #6cf, #7cf, #bcf);
       }
       #input {
         display: inline-block;
@@ -14,6 +16,10 @@
         text-align: center;
         background-color: #ffa;
       }
+      .description {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
       .click {
         display: inline-block;
         width: 20%;
@@ -21,7 +27,7 @@
         border-radius: 10px;
         font-size: 110%;
         font-style: bold;
-        background-color: #afa;
+        background-color: #fcf;
       }
       .output {
         display: inline-block;
@@ -33,7 +39,7 @@
       .buffer {
         display: inline-block;
         width: 110px;
-        margin: 0 10px 0 10px;
+        margin: 0 20px 0 20px;
         text-align: right;
       }
     </style>
@@ -41,16 +47,23 @@
     <script src='functional.js'></script>
   </head>
   <body>
-    <h1>Functional Programming in JavaScript</h1>
-    <h2>A few simple examples</h2>
+    <h1 class='description'>MapReduce in JavaScript</h1>
+    <!--h2>In Functional Programming, functions may be assigned to variables,
+  and functions may be passed as arguments to other functions.</h2!-->
+    <h2 class='description'>Functional Programming languages usually implement the MapReduce
+  paradigm, including the Map, Filter, and Reduce functions.
+  While it is possible to write imperative MapReduce code,
+  functional methods are easier to read and reason about, and are
+  usually optimized for execution speed.</h2>
+    <h2 class='description'>Below are a few simple examples in JavaScript.</h2>
     <h3 class="buffer">Input Array:</h3>
     <h3 id="input"></h3>
     <br/>
 
     <h3 class="buffer">Function:</h3>
-    <button id="mapIt" class="click">map</button>
-    <button id="filterIt" class="click">filter</button>
-    <button id="reduceIt" class="click">reduce</button>
+    <button id="mapIt" class="click">map ( * 2 )</button>
+    <button id="filterIt" class="click">filter ( &gt; 12 )</button>
+    <button id="reduceIt" class="click">reduce (sum)</button>
     <br/>
 
     <h3 class="buffer"></h3>

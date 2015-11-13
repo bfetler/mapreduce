@@ -17,18 +17,19 @@ var multBy2E = function(arr) {
   });
 };
 
+var big = 12;
+
 // filter array using boolean, return elements that match
-var isBiggerThan16 = function(item) {
-  return item > 16;    // boolean
+var isBiggerThanBig = function(item) {
+  return item > big;    // boolean
 };
 var filterBigF = function(arr) {
-  return arr.filter(isBiggerThan16);
+  return arr.filter(isBiggerThanBig);
 };
 var filterBigE = function(arr) {
   return arr.filter(function(item) {
-    return item > 16;  // boolean
+    return item > big;  // boolean
   });
-  return arr.filter(isBiggerThan16);
 };
 
 // return operation on all elements using reduce
@@ -42,11 +43,17 @@ var sumE = function(arr) {
   return arr.reduce(function(a, b) {
     return a + b;  // sum operation
   });
-  return arr.reduce(add2);
+};
+
+var randomArray = function(arr) {
+  return arr.map(function(item) {
+    return Number.parseInt(30 * Math.random());
+  });
 };
 
 window.onload = function() {
   var arr = [5, 10, 15, 20, 25];
+  arr = randomArray(arr);
   var input = document.getElementById('input');
   var result;
   input.innerHTML = '[' + arr + ']';
@@ -59,7 +66,7 @@ window.onload = function() {
     document.getElementById('filterOutput').innerHTML = result;
   };
   document.getElementById('reduceIt').onclick = function() {
-    result = 'sum: ' + sumF(arr);
+    result = 'sum: ' + sumE(arr);
     document.getElementById('reduceOutput').innerHTML = result;
   };
 };

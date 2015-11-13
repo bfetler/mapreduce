@@ -17,12 +17,14 @@ var multBy2Bad = function(arr) {
   return newarr;
 };
 
+var big = 12;
+
 // return array elements matching boolean expression : see filter
 var filterBigA = function(arr) {
   var newarr = [];
   var j = 0;
   for (var i in arr) {
-    if (arr[i] > 16) {      // boolean
+    if (arr[i] > big) {      // boolean
       newarr[j++] = arr[i];
     }
   }
@@ -38,8 +40,15 @@ var sumA = function(arr) {
   return sum;
 };
 
+var randomArray = function(arr) {
+  return arr.map(function(item) {
+    return Number.parseInt(30 * Math.random());
+  });
+};
+
 window.onload = function() {
   var arr = [5, 10, 15, 20, 25];
+  arr = randomArray(arr);
   var input = document.getElementById('input');
   var result;
   input.innerHTML = '[' + arr + ']';
