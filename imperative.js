@@ -1,10 +1,9 @@
-// Imperative programming in JavaScript.
-// It works, but not elegant.
+// Imperative programming in JavaScript.  It works, but not elegant.
 
-// do operation on each array element : see map
+// do operation on each array element : map
 var multBy2A = function(arr) {
-  var newarr = [];     // local variables - better
-  for (var i in arr) {
+  var newarr = [];      // local variable - better
+  for (var i in arr) {  // local variable - better
     newarr[i] = 2 * arr[i];  // operation: multiply by 2
   }
   return newarr;
@@ -19,19 +18,19 @@ var multBy2Bad = function(arr) {
 
 var big = 12;
 
-// return array elements matching boolean expression : see filter
+// return array elements matching boolean expression : filter
 var filterBigA = function(arr) {
   var newarr = [];
   var j = 0;
   for (var i in arr) {
-    if (arr[i] > big) {      // boolean
+    if (arr[i] > big) {      // boolean condition
       newarr[j++] = arr[i];
     }
   }
   return newarr;
 };
 
-// return operation on all elements : see reduce
+// return operation on all elements : reduce
 var sumA = function(arr) {
   var sum = 0;
   for (i in arr) {

@@ -1,18 +1,17 @@
-// Functional programming, declarative style.
-// Much better than imperative: 
-//   Fewer global or local variables, immutable input data.
+// Functional programming.  Functions call other functions, use immutable input data.
 
 // multiply each element of array using map 
-var doubleItem = function(item) {
-  return item * 2;  // may be more complex, reusable function
+var doubleItem = function(item) {  // local variable function name
+  return item * 2;
 };
 var multBy2F = function(arr) {
   return arr.map(function(item) {
-    return doubleItem(item);
+    return doubleItem(item);       // named inner function
   });
 };
+
 var multBy2E = function(arr) {
-  return arr.map(function(item) {
+  return arr.map(function(item) {  // anonymous inner function
     return item * 2;
   });
 };
@@ -24,10 +23,11 @@ var isBiggerThanBig = function(item) {
   return item > big;    // boolean
 };
 var filterBigF = function(arr) {
-  return arr.filter(isBiggerThanBig);
+  return arr.filter(isBiggerThanBig);  // named inner function
 };
+
 var filterBigE = function(arr) {
-  return arr.filter(function(item) {
+  return arr.filter(function(item) {  // anonymous inner function
     return item > big;  // boolean
   });
 };
@@ -37,10 +37,11 @@ var add2 = function(a, b) {
   return a + b;    // sum operation
 };
 var sumF = function(arr) {
-  return arr.reduce(add2);
+  return arr.reduce(add2);  // named inner function
 };
+
 var sumE = function(arr) {
-  return arr.reduce(function(a, b) {
+  return arr.reduce(function(a, b) {  // anonymous inner function
     return a + b;  // sum operation
   });
 };
