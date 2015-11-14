@@ -1,0 +1,39 @@
+body {
+  background-color: #dcf;
+  background: linear-gradient(90deg, #bcf, #7cf, #6cf, #7cf, #bcf);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+.description {
+  margin-left: 130px;
+  margin-right: 130px;
+}
+.buffer {
+  display: inline-block;
+  width: 110px;
+  margin: 0 20px 0 20px;
+  text-align: right;
+}
+#input {
+  display: inline-block;
+  width: 40%;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+  background-color: #ffe6ff;
+}
+.click {
+  display: inline-block;
+  width: 20%;
+  margin: 0 10px 0 10px;
+  border-radius: 10px;
+  font-size: 110%;
+  font-style: bold;
+  background-color: #fcf;
+}
+.output {
+  display: inline-block;
+  width: 20%;
+  margin: 20px 10px 0 10px;
+  text-align: center;
+  background-color: #ffe6ff;
+}

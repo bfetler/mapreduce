@@ -48,7 +48,7 @@ var randomArray = function(arr) {
 
 window.onload = function() {
   var arr = [5, 10, 15, 20, 25];
-  arr = randomArray(arr);
+  arr = randomArray(arr).sort(function(a,b){ return a-b });
   var input = document.getElementById('input');
   var result;
   input.innerHTML = '[' + arr + ']';
