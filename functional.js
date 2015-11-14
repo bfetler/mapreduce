@@ -19,11 +19,11 @@ var multBy2E = function(arr) {
 var big = 12;
 
 // filter array using boolean, return elements that match
-var isBiggerThanBig = function(item) {
+var isBiggerThanBig = function(item) {  // local variable function name
   return item > big;    // boolean
 };
 var filterBigF = function(arr) {
-  return arr.filter(isBiggerThanBig);  // named inner function
+  return arr.filter(isBiggerThanBig);   // named inner function
 };
 
 var filterBigE = function(arr) {
@@ -33,11 +33,11 @@ var filterBigE = function(arr) {
 };
 
 // return operation on all elements using reduce
-var add2 = function(a, b) {
+var add2 = function(a, b) {  // local variable function name
   return a + b;    // sum operation
 };
 var sumF = function(arr) {
-  return arr.reduce(add2);  // named inner function
+  return arr.reduce(add2);   // named inner function
 };
 
 var sumE = function(arr) {
