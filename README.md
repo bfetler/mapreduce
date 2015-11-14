@@ -1,7 +1,7 @@
 # jsmapreduce
 ### JavaScript MapReduce
 
-In [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming), functions may be assigned to variables, and functions 
+In [_Functional Programming_](https://en.wikipedia.org/wiki/Functional_programming), functions may be assigned to variables, and functions 
 (anonymous or not) may be passed as arguments to other functions.
 
 Functional Programming languages usually implement the [_MapReduce_](https://hacks.mozilla.org/2015/01/from-mapreduce-to-javascript-functional-programming/) paradigm, 
