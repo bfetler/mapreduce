@@ -20,6 +20,6 @@ javascript
  fewer variable declarations, and is easier to read and understand.
 
 #### Programming Style
-Neither Ruby nor JavaScript are pure functional languages, but they have functional elements.  One can take advantage of functional methods in them to write better, more organized code.  
-+ Ruby is an OO language with classes and objects, and can be written in either a functional or imperative style.
+Neither Ruby nor JavaScript are pure functional languages, but they have functional elements.  One can take advantage of functional elements in them to write better, more organized code.  
++ Ruby is an OO language with classes and objects.  Some parts can be written in either a functional or imperative style.
 + JavaScript has objects and prototypes (objects inherit from other objects).  It can also be written in either a functional or imperative style.
