@@ -10,11 +10,16 @@ about, and usually use immutable arrays and are optimized for execution speed.
 
 A few simple examples of Functional Programming are given in the directories.
 
-ruby/
+ruby
 + imperative.rb shows imperative programming examples of map, filter, and reduce methods.
 + functional.rb show functional programming examples of map, filter, and reduce methods.
 
-javascript/
+javascript
 + imperative.js shows imperative programming examples of map, filter, and reduce functions.
 + functional.js shows functional programming using map, filter, and reduce functions.  It has
  fewer variable declarations, and is easier to read and understand.
+
+#### Programming Style
+Neither Ruby nor JavaScript are pure functional languages, but they have functional elements.  One can take advantage of functional methods in them to write better, more organized code.  
++ Ruby is an OO language with classes and objects, and can be written in either a functional or imperative style.
++ JavaScript has objects and prototypes (objects inherit from other objects).  It can also be written in either a functional or imperative style.
