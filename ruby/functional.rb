@@ -14,15 +14,15 @@ puts 'input array     : ' + arr.to_s
 puts "\nuse procs, anonymous methods"
 
 # map mult by 2
-a2 = arr.map{ |a| a*2 }
+a2 = arr.map { |a| a*2 }
 puts 'map: mult by 2  : ' + a2.to_s
 
 # filter if > 12
-a2 = arr.select{ |a| a > 12 }
+a2 = arr.select { |a| a > 12 }
 puts 'filter: if > 12 : ' + a2.to_s
 
 # reduce sum
-a2 = arr.reduce{ |a,b| a + b }
+a2 = arr.reduce { |a,b| a + b }
 puts 'reduce: sum     : ' + a2.to_s
 
 a2 = arr.reduce(:+)
@@ -44,8 +44,6 @@ def multBy2(a1)
   return a1.map { |a| a*2 }
 end
 
-# big = 12
-
 # filter uses boolean
 def filterBig(a1)
   big = 12
@@ -62,4 +60,25 @@ puts "\nuse named methods for code reuse"
 puts 'map: mult by 2  : ' +  multBy2(arr).to_s
 puts 'filter: if > 12 : ' + filterBig(arr).to_s
 puts 'reduce: sum     : ' + sumArray(arr).to_s
+
+
+# fun with ruby
+puts "\nfun with map filter reduce"
+
+# map mult by 2
+arr = [5, 10, 15, 20, 25]
+arr.map! { |a| a*2 }
+puts 'map!: mult by 2  : ' + arr.to_s
+
+# filter if > 12
+arr = [5, 10, 15, 20, 25]
+arr.select! { |a| a > 12 }
+puts 'select!: if > 12 : ' + arr.to_s
+
+# reduce sum
+# reduce! method does not exist
+# a2 = arr.reduce! { |a,b| a + b }
+
+
+
 

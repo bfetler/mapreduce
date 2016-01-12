@@ -1,8 +1,5 @@
 # Imperative programming in Ruby.
 
-# can I do lambdas, assign functions to variables in ruby?
-# I think so, maybe?
-
 puts 'simple imperative map-reduce examples'
 
 arr = [5, 10, 15, 20, 25]
@@ -27,6 +24,7 @@ puts 'filter: if > 12 : ' + a2.to_s
 a2 = 0
 arr.each{ |a| a2 += a }
 puts 'reduce: sum     : ' + a2.to_s
+
 
 # wrap code in named methods, keep code DRY, reusable
 
