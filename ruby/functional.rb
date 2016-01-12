@@ -17,9 +17,11 @@ puts "\nuse procs, anonymous methods"
 a2 = arr.map { |a| a*2 }
 puts 'map: mult by 2  : ' + a2.to_s
 
+@big = 12
+
 # filter if > 12
-a2 = arr.select { |a| a > 12 }
-puts 'filter: if > 12 : ' + a2.to_s
+a2 = arr.select { |a| a > @big }
+puts "filter: if > #{@big} : " + a2.to_s
 
 # reduce sum
 a2 = arr.reduce { |a,b| a + b }
@@ -27,14 +29,6 @@ puts 'reduce: sum     : ' + a2.to_s
 
 a2 = arr.reduce(:+)
 puts 'reduce: sum+    : ' + a2.to_s
-
-# add method to Array?
-# def plus(a, b)
-#   return a + b
-# end
-
-# a2 = arr.reduce(:plus)
-# puts a2.to_s
 
 
 # wrap code in named methods, keep code DRY, reusable
@@ -46,8 +40,7 @@ end
 
 # filter uses boolean
 def filterBig(a1)
-  big = 12
-  return a1.select { |a| a > big }
+  return a1.select { |a| a > @big }
 end
 
 # reduce returns single value
@@ -58,27 +51,39 @@ end
 
 puts "\nuse named methods for code reuse"
 puts 'map: mult by 2  : ' +  multBy2(arr).to_s
-puts 'filter: if > 12 : ' + filterBig(arr).to_s
+puts "filter: if > #{@big} : " + filterBig(arr).to_s
 puts 'reduce: sum     : ' + sumArray(arr).to_s
 
 
 # fun with ruby
 puts "\nfun with map filter reduce"
 
+puts 'bang methods replace input variable, not pure FP'
+
 # map mult by 2
-arr = [5, 10, 15, 20, 25]
+arr.map! { |a| rand(30) }.sort!
+puts 'input array     : ' + arr.to_s
+
 arr.map! { |a| a*2 }
 puts 'map!: mult by 2  : ' + arr.to_s
 
-# filter if > 12
-arr = [5, 10, 15, 20, 25]
-arr.select! { |a| a > 12 }
-puts 'select!: if > 12 : ' + arr.to_s
+# filter if > 24
+arr.select! { |a| a > 24 }
+puts 'select!: if > 24 : ' + arr.to_s
 
 # reduce sum
+begin
 # reduce! method does not exist
-# a2 = arr.reduce! { |a,b| a + b }
+a2 = arr.reduce! { |a,b| a + b }
+rescue NoMethodError => e
+  puts e.message
+end
 
+# Questions
+# What kind of method (map, filter, reduce) is:
+#    Array.reject() ?
+#    Array.join() ?
+#    Array.find() ?
 
 
 
