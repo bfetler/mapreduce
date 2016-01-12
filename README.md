@@ -8,7 +8,7 @@ Functional Programming languages usually implement the [_MapReduce_](https://hac
 including the Map, Filter, and Reduce functions. While it is possible to write such data transforms using imperative code, functional methods may be easier to read and reason 
 about, and usually use immutable arrays and are optimized for execution speed.
 
-A few simple examples of _Functional Programming_ are given in the JavaScript files.
+A few simple examples of Functional Programming are given in the JavaScript files.
 + imperative.js shows imperative implementations of map, filter, and reduce functions.  It works, but isn't elegant.
 + functional.js shows functional programming using map, filter, and reduce functions.  It has
  fewer variable declarations, and is easier to read and understand.
