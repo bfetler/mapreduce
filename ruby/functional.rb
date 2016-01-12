@@ -1,10 +1,5 @@
 # Functional programming in Ruby.
 
-# can I do lambdas, assign functions to variables in ruby?
-# I think so, maybe?
-
-# what if looping over two arrays?  can use map? zip?
-
 puts 'simple functional map-reduce examples'
 
 arr = [5, 10, 15, 20, 25]
