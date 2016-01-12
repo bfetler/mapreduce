@@ -84,6 +84,7 @@ end
 #    Array.reject() ?
 #    Array.join() ?
 #    Array.find() ?
+#    Array.zip() ?
 
 
 
