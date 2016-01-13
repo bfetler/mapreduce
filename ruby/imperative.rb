@@ -5,7 +5,7 @@ puts 'simple imperative map-reduce examples'
 arr = [5, 10, 15, 20, 25]
 puts 'input array     : ' + arr.to_s
 
-# anonymous methods, just call proc on object
+# anonymous methods
 puts "\nuse procs, anonymous methods"
 
 # map multiply by 2
