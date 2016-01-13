@@ -4,13 +4,13 @@
 var doubleItem = function(item) {  // local variable function name
   return item * 2;
 };
-var multBy2F = function(arr) {
+var multBy2 = function(arr) {
   return arr.map(function(item) {
     return doubleItem(item);       // named inner function
   });
 };
 
-var multBy2E = function(arr) {
+var multBy2b = function(arr) {
   return arr.map(function(item) {  // anonymous inner function
     return item * 2;
   });
@@ -22,11 +22,11 @@ var big = 12;
 var isBiggerThanBig = function(item) {  // local variable function name
   return item > big;    // boolean
 };
-var filterBigF = function(arr) {
+var filterBig = function(arr) {
   return arr.filter(isBiggerThanBig);   // named inner function
 };
 
-var filterBigE = function(arr) {
+var filterBigb = function(arr) {
   return arr.filter(function(item) {  // anonymous inner function
     return item > big;  // boolean
   });
@@ -36,11 +36,11 @@ var filterBigE = function(arr) {
 var add2 = function(a, b) {  // local variable function name
   return a + b;    // sum operation
 };
-var sumF = function(arr) {
+var sumArrayb = function(arr) {
   return arr.reduce(add2);   // named inner function
 };
 
-var sumE = function(arr) {
+var sumArray = function(arr) {
   return arr.reduce(function(a, b) {  // anonymous inner function
     return a + b;  // sum operation
   });
@@ -59,15 +59,15 @@ window.onload = function() {
   var result;
   input.innerHTML = '[' + arr + ']';
   document.getElementById('mapIt').onclick = function() {
-    result = '[' + multBy2F(arr) + ']';
+    result = '[' + multBy2(arr) + ']';
     document.getElementById('mapOutput').innerHTML = result;
   };
   document.getElementById('filterIt').onclick = function() {
-    result = '[' + filterBigF(arr) + ']';
+    result = '[' + filterBig(arr) + ']';
     document.getElementById('filterOutput').innerHTML = result;
   };
   document.getElementById('reduceIt').onclick = function() {
-    result = 'sum: ' + sumE(arr);
+    result = 'sum: ' + sumArray(arr);
     document.getElementById('reduceOutput').innerHTML = result;
   };
 };

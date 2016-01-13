@@ -1,7 +1,7 @@
 // Imperative programming in JavaScript.  It works, but not elegant.
 
 // do operation on each array element : map
-var multBy2A = function(arr) {
+var multBy2 = function(arr) {
   var newarr = [];      // local variable - better
   for (var i in arr) {  // local variable - better
     newarr[i] = 2 * arr[i];  // operation: multiply by 2
@@ -19,7 +19,7 @@ var multBy2Bad = function(arr) {
 var big = 12;
 
 // return array elements matching boolean expression : filter
-var filterBigA = function(arr) {
+var filterBig = function(arr) {
   var newarr = [];
   var j = 0;
   for (var i in arr) {
@@ -31,7 +31,7 @@ var filterBigA = function(arr) {
 };
 
 // return operation on all elements : reduce
-var sumA = function(arr) {
+var sumArray = function(arr) {
   var sum = 0;
   for (i in arr) {
     sum += arr[i];  // sum operation
@@ -52,15 +52,15 @@ window.onload = function() {
   var result;
   input.innerHTML = '[' + arr + ']';
   document.getElementById('mapIt').onclick = function() {
-    result = '[' + multBy2A(arr) + ']';
+    result = '[' + multBy2(arr) + ']';
     document.getElementById('mapOutput').innerHTML = result;
   };
   document.getElementById('filterIt').onclick = function() {
-    result = '[' + filterBigA(arr) + ']';
+    result = '[' + filterBig(arr) + ']';
     document.getElementById('filterOutput').innerHTML = result;
   };
   document.getElementById('reduceIt').onclick = function() {
-    result = 'sum: ' + sumA(arr);
+    result = 'sum: ' + sumArray(arr);
     document.getElementById('reduceOutput').innerHTML = result;
   };
 };
