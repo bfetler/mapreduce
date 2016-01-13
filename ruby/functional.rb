@@ -28,9 +28,13 @@ puts "reduce: sum+    : " + a2.to_s
 
 # wrap code in named methods, keep code DRY, reusable
 
+def doubleItem(a)
+  return a*2
+end
+
 # map returns another array
 def multBy2(a1)
-  return a1.map { |a| a*2 }
+  return a1.map { |a| doubleItem(a) }
 end
 
 # filter uses boolean
@@ -74,24 +78,28 @@ rescue NoMethodError => e
 end
 
 bowie = ['turn', 'and', 'face', 'the', 'strange', 'changes']
-changes = (bowie[-1][0..1]+'-') * 4 + bowie[-1]
-puts "\nbowie says: " + changes
-puts bowie.map { |b| b[0..1] + '-' + b }.to_s
+puts "\nbowie says: " + bowie.map { |b| b[0..1] + '-' + b }.to_s
 
 # Questions.
 #
 # 1. Why does Array.reduce! not exist?
 #
-# 2. How would you implement map, select, reduce?  Hint: see Enumerator
+# 2. The basic elements of MapReduce methods are:
+#        map    - Array returns Array
+#        filter - Array returns Array using a boolean
+#        reduce - Array returns a single object
 #
-# 3. Are the following methods similar to map, filter, or reduce?
-#    Or combinations of them?  How would you best describe them?
+#    Which MapReduce elements are used in:
 #        Array.reject() ?
 #        Array.join() ?
 #        Array.find() ?
 #        Array.zip() ?
 #
-# 4. For all the methods in Array.methods.sort, how many are similar to
+# 3. For all methods in Array.methods.sort, how many use elements of
 #    map, filter, reduce?
+#
+# 4. For all methods in Hash.methods.sort, how many use elements of
+#    map, filter, reduce?
+#
 
 
