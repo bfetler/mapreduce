@@ -5,9 +5,7 @@ var doubleItem = function(item) {  // local variable function name
   return item * 2;
 };
 var multBy2 = function(arr) {
-  return arr.map(function(item) {
-    return doubleItem(item);       // named inner function
-  });
+  return arr.map(doubleItem);
 };
 
 var multBy2b = function(arr) {
