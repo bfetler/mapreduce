@@ -22,9 +22,6 @@ puts "filter: if > #{@big} : " + a2.to_s
 a2 = arr.reduce { |a,b| a + b }
 puts "reduce: sum     : " + a2.to_s
 
-a2 = arr.reduce(:+)
-puts "reduce: sum+    : " + a2.to_s
-
 
 # wrap code in named methods, keep code DRY, reusable
 
@@ -54,9 +51,65 @@ puts "reduce: sum     : " + sumArray(arr).to_s
 
 
 # fun with ruby
-puts "\nfun with map filter reduce"
+puts "\nfun with map select reduce"
 
-puts "bang methods replace input variable, not pure FP"
+puts "\nmap-reduce can use symbols or references for methods, Procs or lambdas"
+puts "input array          : " + arr.to_s
+
+a2 = arr.map &:odd?
+puts "map: ref odd?        : " + a2.to_s
+
+a2 = arr.select &:odd?
+puts "select: ref odd?     : " + a2.to_s
+
+a2 = arr.reduce &:+
+puts "reduce: ref symbol + : " + a2.to_s
+
+a2 = arr.reduce :+
+puts "reduce: symbol +     : " + a2.to_s
+
+# use a named proc instead of block
+multBy2 = Proc.new{ |e| e*2 }
+a2 = arr.map &multBy2
+puts "map: Proc multBy2    : " + a2.to_s
+
+# use a named lambda instead of block
+triple = lambda { |e| e*3 }
+a2 = arr.map &triple
+puts "map: lambda triple   : " + a2.to_s
+
+gt12 = lambda { |e| e > @big }
+a2 = arr.select &gt12
+puts "select: lambda gt12  : " + a2.to_s
+
+summit = lambda { |e,f| e + f }
+a2 = arr.reduce &summit
+puts "reduce: lambda sum   : " + a2.to_s
+
+# use anonymous lambda, but it's just a longer version of block
+a2 = arr.map &lambda { |e| e*4 }
+puts "map: lambda quadruple : " + a2.to_s
+
+def dblItem(item)
+  return item * 2
+end
+begin
+  a2 = arr.map &dblItem
+  puts "map: def dblItem     : " + a2.to_s
+rescue ArgumentError => e
+  puts 'map: def dblItem, ' + e.message
+end
+
+# generally not a good idea to extend builtin classes
+class Fixnum
+  def dbl
+    self * 2
+  end
+end
+a2 = arr.map &:dbl
+puts "map: class def dbl   : " + a2.to_s
+
+puts "\nbang methods replace input variable, not pure FP"
 
 # map mult by 2
 arr.map! { |a| rand(30) }.sort!
@@ -70,15 +123,15 @@ arr.select! { |a| a > 24 }
 puts "select!: if > 24 : " + arr.to_s
 
 # reduce sum
-begin
-# reduce! method does not exist.  
-a2 = arr.reduce! { |a,b| a + b }
+begin   # method does not exist
+  a2 = arr.reduce! { |a,b| a + b }
 rescue NoMethodError => e
   puts e.message
 end
 
 bowie = ['turn', 'and', 'face', 'the', 'strange', 'changes']
-puts "\nbowie says: " + bowie.map { |b| b[0..1] + '-' + b }.to_s
+# puts "\nbowie says: " + bowie.map { |b| b[0..1] + '-' + b }.to_s
+puts "\nbowie says: " + bowie.map { |b| b[0] + '-' + b }.to_s
 
 # Questions.
 #
@@ -86,10 +139,11 @@ puts "\nbowie says: " + bowie.map { |b| b[0..1] + '-' + b }.to_s
 #
 # 2. The basic elements of MapReduce methods are:
 #        map    - Array returns Array
-#        filter - Array returns Array using a boolean
+#        filter - Array returns Array filtered by a boolean
 #        reduce - Array returns a single object
 #
-#    Which MapReduce elements are used in:
+#    Which MapReduce elements are used in the following?  How
+#    might they be implemented?
 #        Array.reject() ?
 #        Array.join() ?
 #        Array.find() ?
@@ -98,8 +152,24 @@ puts "\nbowie says: " + bowie.map { |b| b[0..1] + '-' + b }.to_s
 # 3. For all methods in Array.methods.sort, how many use elements of
 #    map, filter, reduce?
 #
-# 4. For all methods in Hash.methods.sort, how many use elements of
-#    map, filter, reduce?
+# 4. For all methods in Hash.methods.sort and Set.methods.sort, how
+#    many use elements of map, filter, reduce?
+#
+# 5. Are map, select and reduce functional?  Yes, in the sense they
+#    do not modify external parameter state.  They modify only interal
+#    parameters within the block.  They can use procs or lambdas in
+#    place of a block.
+#
+# 6. Are map! and select! functional?  No, in the sense they modify
+#    state of external parameters.  But they are convenient methods
+#    for doing common actions.
+#
+# 7. For map, select, and reduce to take symbols or references, it's
+#    easiest to use named Procs or lambdas, or to use builtin methods
+#    on the element class.
+#    It's generally not a good idea to add methods to builtin classes
+#    as it will add clutter to the namespace.  But you can extend
+#    builtin classes, e.g. MyNum < Fixnum.  
 #
 
 

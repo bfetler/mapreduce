@@ -14,6 +14,9 @@ var multBy2b = function(arr) {
   });
 };
 
+// sometimes it's helpful to use named functions rather than 
+// anonymous chained functions, to document code or keep it DRY
+
 var big = 12;
 
 // filter array using boolean, return elements that match

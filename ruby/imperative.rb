@@ -10,7 +10,7 @@ puts "\nuse procs, anonymous methods"
 
 # map multiply by 2
 a2 = []
-arr.each{ |a| a2 << a*2 }
+arr.each{ |a| a2 << a*2 }  # push element on array
 puts 'map: mult by 2  : ' + a2.to_s
 
 # filter if > 12
