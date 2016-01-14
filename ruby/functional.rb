@@ -6,7 +6,7 @@ arr = [5, 10, 15, 20, 25]
 puts "input array     : " + arr.to_s
 
 # anonymous methods
-puts "\nuse procs, anonymous methods"
+puts "\nuse blocks, similar to anonymous methods"
 
 # map mult by 2
 a2 = arr.map { |a| a*2 }
