@@ -3,40 +3,39 @@
 puts 'simple functional map-reduce examples'
 
 arr = [5, 10, 15, 20, 25]
-puts "input array     : " + arr.to_s
+puts "input array            : " + arr.to_s
 
 # anonymous methods
 puts "\nuse blocks, similar to anonymous methods"
 
 # map mult by 2
 a2 = arr.map { |a| a*2 }
-puts "map: mult by 2  : " + a2.to_s
+puts "map: mult by 2         : " + a2.to_s
 
 @big = 12
 
 # filter if > 12
 a2 = arr.select { |a| a > @big }
-puts "filter: if > #{@big} : " + a2.to_s
+puts "filter: if > #{@big}        : " + a2.to_s
 
 # reduce sum
 a2 = arr.reduce { |a,b| a + b }
-puts "reduce: sum     : " + a2.to_s
+puts "reduce: sum            : " + a2.to_s
 
+# use named methods, DRY reusable code
 
-# wrap code in named methods, keep code DRY, reusable
-
-def doubleItem(a)
-  return a*2
+def doubleIt(e)
+  return e*2
 end
 
 # map returns another array
 def multBy2(a1)
-  return a1.map { |a| doubleItem(a) }
+  return a1.map { |e| doubleIt(e) }
 end
 
 # filter uses boolean
 def filterBig(a1)
-  return a1.select { |a| a > @big }
+  return a1.select { |e| e > @big }
 end
 
 # reduce returns single value
@@ -45,50 +44,53 @@ def sumArray(a1)
 end
 
 puts "\nuse named methods for code reuse"
-puts "map: mult by 2  : " +  multBy2(arr).to_s
-puts "filter: if > #{@big} : " + filterBig(arr).to_s
-puts "reduce: sum     : " + sumArray(arr).to_s
+puts "map: mult by 2         : " +  multBy2(arr).to_s
+puts "filter: if > #{@big}        : " + filterBig(arr).to_s
+puts "reduce: sum            : " + sumArray(arr).to_s
+
+
+# use a named lambda in place of block, keep code DRY, reusable
+puts "\nuse named lambda references instead of blocks for code reuse"
+
+doubleItem = lambda { |e| e*2 }
+a2 = arr.map &doubleItem
+puts "map: lambda doubleItem : " + a2.to_s
+
+gt12 = lambda { |e| e > @big }
+a2 = arr.select &gt12
+puts "select: lambda gt12    : " + a2.to_s
+
+summit = lambda { |a,b| a + b }
+a2 = arr.reduce &summit
+puts "reduce: lambda sum     : " + a2.to_s
 
 
 # fun with ruby
 puts "\nfun with map select reduce"
 
 puts "\nmap-reduce can use symbols or references for methods, Procs or lambdas"
-puts "input array          : " + arr.to_s
+puts "input array            : " + arr.to_s
 
 a2 = arr.map &:odd?
-puts "map: ref odd?        : " + a2.to_s
+puts "map: ref odd?          : " + a2.to_s
 
 a2 = arr.select &:odd?
-puts "select: ref odd?     : " + a2.to_s
+puts "select: ref odd?       : " + a2.to_s
 
 a2 = arr.reduce &:+
-puts "reduce: ref symbol + : " + a2.to_s
+puts "reduce: ref symbol +   : " + a2.to_s
 
 a2 = arr.reduce :+
-puts "reduce: symbol +     : " + a2.to_s
+puts "reduce: symbol +       : " + a2.to_s
 
 # use a named proc instead of block
-multBy2 = Proc.new{ |e| e*2 }
-a2 = arr.map &multBy2
-puts "map: Proc multBy2    : " + a2.to_s
-
-# use a named lambda instead of block
-triple = lambda { |e| e*3 }
-a2 = arr.map &triple
-puts "map: lambda triple   : " + a2.to_s
-
-gt12 = lambda { |e| e > @big }
-a2 = arr.select &gt12
-puts "select: lambda gt12  : " + a2.to_s
-
-summit = lambda { |e,f| e + f }
-a2 = arr.reduce &summit
-puts "reduce: lambda sum   : " + a2.to_s
+multBy3 = Proc.new{ |e| e*3 }
+a2 = arr.map &multBy3
+puts "map: Proc multBy3       : " + a2.to_s
 
 # use anonymous lambda, but it's just a longer version of block
-a2 = arr.map &lambda { |e| e*4 }
-puts "map: lambda quadruple : " + a2.to_s
+a2 = arr.map &lambda { |e| e*3 }
+puts "map: lambda triple     : " + a2.to_s
 
 def dblItem(item)
   return item * 2
@@ -107,20 +109,20 @@ class Fixnum
   end
 end
 a2 = arr.map &:dbl
-puts "map: class def dbl   : " + a2.to_s
+puts "map: class def dbl     : " + a2.to_s
 
 puts "\nbang methods replace input variable, not pure FP"
 
 # map mult by 2
 arr.map! { |a| rand(30) }.sort!
-puts "input array      : " + arr.to_s
+puts "input array            : " + arr.to_s
 
 arr.map! { |a| a*2 }
-puts "map!: mult by 2  : " + arr.to_s
+puts "map!: mult by 2        : " + arr.to_s
 
 # filter if > 24
 arr.select! { |a| a > 24 }
-puts "select!: if > 24 : " + arr.to_s
+puts "select!: if > 24       : " + arr.to_s
 
 # reduce sum
 begin   # method does not exist
