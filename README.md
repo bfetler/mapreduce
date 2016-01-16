@@ -21,3 +21,13 @@ javascript
 Neither Ruby nor JavaScript are pure functional languages, but they have functional elements.  One can take advantage of functional elements in them to write better, more organized code.  
 + Ruby is an OO language with classes and objects.  Some parts can be written in either a functional or imperative style.
 + JavaScript has objects and prototypes (objects inherit from other objects).  It can also be written in either a functional or imperative style.
+
+#### Elements of MapReduce
+The basic elements of _MapReduce_ methods are:
++ map : array input, transformed array output
++ filter : array input, array output, boolean test
++ reduce : array input, single object output
+
+#### Questions
++ Which _MapReduce_ elements are used in builtin Array methods?
++ Which _MapReduce_ elements are used in builtin Hash methods?
