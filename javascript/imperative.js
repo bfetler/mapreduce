@@ -1,4 +1,4 @@
-// Imperative programming in JavaScript.  It works, but not elegant.
+// Imperative programming in JavaScript.  It works, but isn't elegant.
 
 // do operation on each array element : map
 var multBy2 = function(arr) {

@@ -1,4 +1,4 @@
-// Functional programming.  Functions call other functions, use immutable input data.
+// Functional programming examples: functions call other functions, use immutable input data.
 
 // multiply each element of array using map 
 var doubleItem = function(item) {  // local variable function name
@@ -14,7 +14,7 @@ var multBy2b = function(arr) {
   });
 };
 
-// sometimes it's helpful to use named functions rather than 
+// it can be helpful to use named functions rather than 
 // anonymous chained functions, to document code or keep it DRY
 
 var big = 12;
