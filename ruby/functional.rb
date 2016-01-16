@@ -154,19 +154,16 @@ puts "\nbowie says: " + bowie.map { |b| b[0] + '-' + b }.to_s
 # 3. For all methods in Array.methods.sort, how many use elements of
 #    map, filter, reduce?
 #
-# 4. For all methods in Hash.methods.sort and Set.methods.sort, how
-#    many use elements of map, filter, reduce?
-#
-# 5. Are map, select and reduce functional?  Yes, in the sense they
+# 4. Are map, select and reduce functional?  Yes, in the sense they
 #    do not modify external parameter state.  They modify only interal
 #    parameters within the block.  They can use procs or lambdas in
 #    place of a block.
 #
-# 6. Are map! and select! functional?  No, in the sense they modify
+# 5. Are map! and select! functional?  No, in the sense they modify
 #    state of external parameters.  But they are convenient methods
 #    for doing common actions.
 #
-# 7. For map, select, and reduce to take symbols or references, it's
+# 6. For map, select, and reduce to take symbols or references, it's
 #    easiest to use named Procs or lambdas, or to use builtin methods
 #    on the element class.
 #    It's generally not a good idea to add methods to builtin classes
