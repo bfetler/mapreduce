@@ -5,7 +5,7 @@ puts 'simple functional map-reduce examples'
 arr = [5, 10, 15, 20, 25]
 puts "input array            : " + arr.to_s
 
-# anonymous methods
+# blocks ~ anonymous methods
 puts "\nuse blocks, similar to anonymous methods"
 
 # map mult by 2
