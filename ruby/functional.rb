@@ -95,14 +95,14 @@ puts "map: lambda triple     : " + a2.to_s
 def dblItem(item)
   return item * 2
 end
-begin
+begin  "map cannot take arguments, but it can take blocks or lambdas"
   a2 = arr.map &dblItem
   puts "map: def dblItem     : " + a2.to_s
 rescue ArgumentError => e
   puts 'map: def dblItem, ' + e.message
 end
 
-# generally not a good idea to extend builtin classes
+# not a good idea to extend builtin classes - do NOT do this
 class Fixnum
   def dbl
     self * 2
@@ -111,7 +111,7 @@ end
 a2 = arr.map &:dbl
 puts "map: class def dbl     : " + a2.to_s
 
-puts "\nbang methods replace input variable, not pure FP"
+puts "\nbang methods replace input variable, not pure functional programming"
 
 # map mult by 2
 arr.map! { |a| rand(30) }.sort!
@@ -169,6 +169,9 @@ puts "\nbowie says: " + bowie.map { |b| b[0] + '-' + b }.to_s
 #    It's generally not a good idea to add methods to builtin classes
 #    as it will add clutter to the namespace.  But you can extend
 #    builtin classes, e.g. MyNum < Fixnum.  
+#
+# 7. How would you implement map, select, and reduce if they didn't
+#    exist?  Hint: use yield
 #
 
 
