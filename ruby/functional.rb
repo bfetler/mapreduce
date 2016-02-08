@@ -28,6 +28,14 @@ def doubleIt(e)
   return e*2
 end
 
+def filterIt(e)
+   return e > @big
+end
+
+def sum2(a, b)
+   return a + b
+end
+
 # map returns another array
 def multBy2(a1)
   return a1.map { |e| doubleIt(e) }
@@ -35,12 +43,12 @@ end
 
 # filter uses boolean
 def filterBig(a1)
-  return a1.select { |e| e > @big }
+  return a1.select { |e| filterIt(e) }
 end
 
 # reduce returns single value
 def sumArray(a1)
-  return a1.reduce { |a, b| a + b }
+  return a1.reduce { |a, b| sum2(a, b) }
 end
 
 puts "\nuse named methods for code reuse"
