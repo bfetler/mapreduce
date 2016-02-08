@@ -91,10 +91,13 @@ puts "reduce: ref symbol +   : " + a2.to_s
 a2 = arr.reduce :+
 puts "reduce: symbol +       : " + a2.to_s
 
+a2 = arr.reduce(10) { |a,b| a + b }
+puts "reduce: sum, init 10   : " + a2.to_s
+
 # use a named proc instead of block
 multBy3 = Proc.new{ |e| e*3 }
 a2 = arr.map &multBy3
-puts "map: Proc multBy3       : " + a2.to_s
+puts "map: Proc multBy3      : " + a2.to_s
 
 # use anonymous lambda, but it's just a longer version of block
 a2 = arr.map &lambda { |e| e*3 }

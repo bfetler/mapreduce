@@ -1,5 +1,7 @@
 # functional map-reduce in Python
 
+# from functools import reduce  # python 3
+
 arr = [5, 10, 15, 20, 25]
 
 print 'input array:', arr
@@ -41,6 +43,7 @@ print '\nfun with python'
 print 'map: add two arrays:', list(map( sum2, [2,3,4], [10,11,12] ))
 print 'map: multiply three arrays:', list(map( (lambda a,b,c: a*b*c), \
         [2,3,4], [10,11,12], [-3,-2,-1]))
+print 'reduce: sum initval 10:', reduce( (lambda x,y: x + y), arr, 10)
 
 # are list comprehensions functional or imperative?
 print 'list comprehension: map * 2:', [a * 2 for a in arr]
