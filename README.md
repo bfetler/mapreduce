@@ -8,19 +8,25 @@ about, and usually uses immutable arrays and is optimized for execution speed.
 
 A few simple examples of _MapReduce_ are given in the directories.
 
-ruby
-+ imperative.rb shows imperative programming examples of map, filter, and reduce methods.
-+ functional.rb show functional programming examples of map, filter, and reduce methods.  Blocks and lambdas are helpful when writing functional ruby code.
-
 javascript
 + imperative.js shows imperative programming examples of map, filter, and reduce functions.
 + functional.js shows functional programming using map, filter, and reduce functions.  It has
  fewer variable declarations, and is easier to read and understand.
 
+python
++ imperative.py shows imperative programming examples of map, filter, and reduce methods.
++ functional.py show functional programming examples of map, filter, and reduce methods.  Lambdas are helpful when writing functional python code.
+
+ruby
++ imperative.rb shows imperative programming examples of map, filter, and reduce methods.
++ functional.rb show functional programming examples of map, filter, and reduce methods.  Blocks and lambdas are helpful when writing functional ruby code.
+
 #### Programming Style
-Neither Ruby nor JavaScript are pure functional languages, but they have functional elements.  One can take advantage of functional elements in them to write better, more organized code.  
-+ Ruby is an OO language with classes and objects.  Some parts can be written in either a functional or imperative style.
+None of these scripting languages are purely functional, but they have functional elements.  One can take advantage of functional elements in them to write better, more organized code.  
 + JavaScript has objects and prototypes (objects inherit from other objects).  It can also be written in either a functional or imperative style.
++ Python is an OO language with classes and objects.  It can be written in either a functional or imperative style.  List comprehensions may help.
++ Ruby is an OO language with classes and objects.  It can be written in either a functional or imperative style.
+
 
 #### Elements of MapReduce
 The basic elements of _MapReduce_ methods are:
