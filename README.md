@@ -1,4 +1,3 @@
-# simple-mapreduce
 ### Map Reduce
 
 [_MapReduce_](https://hacks.mozilla.org/2015/01/from-mapreduce-to-javascript-functional-programming/) is one of the common idioms in modern programming languages, usually associated with functional programming techniques.  In [_Functional Programming_](https://en.wikipedia.org/wiki/Functional_programming), functions may be assigned to variables, and functions (anonymous or not) may be passed as arguments to other functions.
