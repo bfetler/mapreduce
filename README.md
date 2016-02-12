@@ -18,12 +18,12 @@ python
 
 ruby
 + imperative.rb shows imperative programming examples of map, filter, and reduce methods.
-+ functional.rb show functional programming examples of map, filter, and reduce methods.  Blocks and lambdas are helpful when writing functional ruby code.
++ functional.rb show functional programming examples of map, filter, and reduce methods.  Lambdas and blocks are helpful when writing functional ruby code.
 
 #### Programming Style
 None of these scripting languages are purely functional, but they have functional elements.  One can take advantage of functional elements in them to write better, more organized code.  
 + JavaScript has objects and prototypes (objects inherit from other objects).  It can also be written in either a functional or imperative style.
-+ Python is an OO language with classes and objects.  It can be written in either a functional or imperative style.  List comprehensions may help.
++ Python is an OO language with classes and objects.  It can be written in either a functional or imperative style.  List comprehensions and generators may help.
 + Ruby is an OO language with classes and objects.  It can be written in either a functional or imperative style.
 
 
