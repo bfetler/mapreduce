@@ -53,3 +53,36 @@ print 'map: mult by 2:', multBy2(arr)
 print 'filter: if >', big, ':', filterBig(arr)
 print 'reduce: sum:', sumArray(arr)
 
+# define my own functions
+def mymap(func, ar):
+    rr = []
+    for a in ar:
+        rr.append( func(a) )
+    return rr
+
+def myfilter(func, ar):
+    rr = []
+    for a in ar:
+        if func(a):
+            rr.append( a )
+    return rr
+
+def myreduce(func, ar, initval=0):
+    sum = initval
+    if type(ar[0]) == str:
+        if type(initval) != str:
+            sum = ''
+    for a in ar:
+        sum = func(sum, a)
+    return sum
+
+print 'mymap: mult by 2:', mymap( (lambda x: x * 2), arr)
+print 'myfilter: filter >', big, ':', myfilter( (lambda x: x > big), arr)
+# cases work the same as builtin map, filter
+print 'myfilter: mult by 2:', myfilter( (lambda x: x * 2), arr)
+print 'mymap: filter >', big, ':', mymap( (lambda x: x > big), arr)
+print 'myreduce: sum:', myreduce( (lambda x,y: x + y), arr, 5)
+print 'myreduce: sum str:', myreduce( (lambda x,y: x + y), ['a', 'b', 'c'])
+print 'myreduce: sum str:', myreduce( (lambda x,y: x + y), ['a', 'b', 'c'], 'd')
+
+

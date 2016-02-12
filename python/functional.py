@@ -45,12 +45,17 @@ print 'map: multiply three arrays:', list(map( (lambda a,b,c: a*b*c), \
         [2,3,4], [10,11,12], [-3,-2,-1]))
 print 'reduce: sum initval 10:', reduce( (lambda x,y: x + y), arr, 10)
 
-# are list comprehensions functional or imperative?
+# are list comprehensions or generators functional or imperative?
 print 'list comprehension: map * 2:', [a * 2 for a in arr]
 print 'list comprehension: filter if >', big, ':', [a for a in arr if a > big]
 a2 = [a + b for a in range(3) for b in range(3)]
 print 'list comprehension: map arr + arr:', a2
 
-# Q: try map, filter with tuple?
-
+tup = (6, 11, 16, 21, 26)
+print 'input tuple:', tup
+print 'tuple map: mult by 2:', list(map( (lambda x: x * 2), tup ))
+print 'tuple filter: if >', big, ':', list(filter( (lambda x: x > big), tup ))
+print 'tuple reduce: sum:', reduce( (lambda x,y: x + y), tup )
+print 'tuple generator: reduce sum arr:', sum(a for a in arr)
+print 'tuple generator: reduce sum tup:', sum(a for a in tup)
 
