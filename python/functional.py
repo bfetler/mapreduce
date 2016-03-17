@@ -40,6 +40,24 @@ print('map: mult by 2:', dblArray(arr))
 print('filter: if >', big, ':', filtArray(arr))
 print('reduce: sum:', sumArray(arr))
 
+# named lambda instead of def method
+mBy2 = lambda x: x*2
+ifBig = lambda x: x > big
+add2 = lambda x,y: x + y
+
+def dbArray(ar):
+    return list(map( mBy2, arr ))
+
+def filArray(ar):
+    return list(filter( ifBig, arr ))
+
+def smArray(ar):
+    return reduce( add2, arr )
+
+print('map: mult by 2:', dbArray(arr))
+print('filter: if >', big, ':', filArray(arr))
+print('reduce: sum:', smArray(arr))
+
 print('\nfun with python')
 print('map: add two arrays:', list(map( sum2, [2,3,4], [10,11,12] )))
 print('map: multiply three arrays:', list(map( (lambda a,b,c: a*b*c), \
