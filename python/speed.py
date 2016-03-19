@@ -106,6 +106,17 @@ def speed_test():
             treduce.append(td)
         print_time_stats("reduce lambda", treduce)
 
+# fun
+        tlambda = []
+        for i in range(loops):
+            t1 = time.time()
+            a3 = [a*2 for a in a1 if a > big2]
+            t2 = time.time()
+            td = time_delta(t1, t2)
+            tlambda.append(td)
+        print_time_stats("filter lambda", tlambda)
+
+
 # main program
 if __name__ == '__main__':
     speed_test()
