@@ -19,9 +19,7 @@ def print_time_stats(label, tarray):
 #   print("  raw", tarray)
     sys.stdout.flush()
 
-# main program
-if __name__ == '__main__':
-
+def time_tests():
     print("Dr. Evil: One Million Dollars?  Bwaahaahaahaaaa!")
 
 #   bigs = [100000, 1000000, 3000000, 10000000]
@@ -107,5 +105,9 @@ if __name__ == '__main__':
             td = time_delta(t1, t2)
             treduce.append(td)
         print_time_stats("reduce lambda", treduce)
+
+# main program
+if __name__ == '__main__':
+    time_tests()
 
 
