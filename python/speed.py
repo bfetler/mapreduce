@@ -15,11 +15,11 @@ def time_delta(t1, t2):
     return t2 - t1
 
 def print_time_stats(label, tarray):
-    print("  %-18s: mean %.3f, std %.3f" % (label, np.mean(tarray), np.std(tarray)))
+    print("  %-18s: mean %.3f, std %.3f s" % (label, np.mean(tarray), np.std(tarray)))
 #   print("  raw", tarray)
     sys.stdout.flush()
 
-def time_tests():
+def speed_test():
     print("Dr. Evil: One Million Dollars?  Bwaahaahaahaaaa!")
 
 #   bigs = [100000, 1000000, 3000000, 10000000]
@@ -108,6 +108,6 @@ def time_tests():
 
 # main program
 if __name__ == '__main__':
-    time_tests()
+    speed_test()
 
 
