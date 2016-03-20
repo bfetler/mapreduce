@@ -5,8 +5,7 @@ from functools import reduce  # needed for python 3
 arr = [5, 10, 15, 20, 25]
 
 print('input array:', arr)
-# use list() to store results for map / filter in python 3
-#   list() works but not needed in python 2
+# use list() to store results for map / filter, needed in python 3
 
 print('anonymous methods')
 print('map: mult by 2:', list(map(lambda x: x * 2, arr)))
@@ -65,6 +64,10 @@ print('map: multiply three arrays:', list(map( (lambda a,b,c: a*b*c), \
 print('reduce: sum initval 10:', reduce( (lambda x,y: x + y), arr, 10))
 
 # Q: are list comprehensions or tuple generators functional or imperative?  functional
+# Q: which of the following methods are map-like, filter-like, or reduce-like?
+#    join, all, min, max, zip, reversed, sorted
+#    other methods?
+
 print('list comprehension: map * 2:', [a * 2 for a in arr])
 print('list comprehension: filter if >', big, ':', [a for a in arr if a > big])
 a2 = [a + b for a in range(3) for b in range(3)]
