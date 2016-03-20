@@ -40,7 +40,7 @@ print('map: mult by 2:', dblArray(arr))
 print('filter: if >', big, ':', filtArray(arr))
 print('reduce: sum:', sumArray(arr))
 
-# named lambda instead of def method
+# named lambda instead of def method - good for code reuse
 mBy2 = lambda x: x*2
 ifBig = lambda x: x > big
 add2 = lambda x,y: x + y
@@ -64,7 +64,7 @@ print('map: multiply three arrays:', list(map( (lambda a,b,c: a*b*c), \
         [2,3,4], [10,11,12], [-3,-2,-1])))
 print('reduce: sum initval 10:', reduce( (lambda x,y: x + y), arr, 10))
 
-# Q: are list comprehensions or tuple generators functional or imperative?
+# Q: are list comprehensions or tuple generators functional or imperative?  functional
 print('list comprehension: map * 2:', [a * 2 for a in arr])
 print('list comprehension: filter if >', big, ':', [a for a in arr if a > big])
 a2 = [a + b for a in range(3) for b in range(3)]

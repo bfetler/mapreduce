@@ -30,7 +30,7 @@ def speed_test():
     for big in bigs:
         a1 = list(range(big))
 
-        print("\ncounting evil steps: %d  (10 ^ %.1f)" % (big, np.log10(big)))
+        print("\ncounting steps: %d  (10 ^ %.1f)" % (big, np.log10(big)))
 
 # map
         tappend = []
@@ -60,7 +60,7 @@ def speed_test():
             t2 = time.time()
             td = time_delta(t1, t2)
             tlcomp.append(td)
-        print_time_stats("list comp", tlcomp)
+        print_time_stats("map list comp", tlcomp)
 
 # filter
         tappend = []
@@ -84,6 +84,15 @@ def speed_test():
             td = time_delta(t1, t2)
             tlambda.append(td)
         print_time_stats("filter lambda", tlambda)
+
+        tlambda = []
+        for i in range(loops):
+            t1 = time.time()
+            a3 = [a for a in a1 if a > big2]
+            t2 = time.time()
+            td = time_delta(t1, t2)
+            tlambda.append(td)
+        print_time_stats("filter list comp", tlambda)
 
 # reduce
         tsum = []
@@ -110,11 +119,31 @@ def speed_test():
         tlambda = []
         for i in range(loops):
             t1 = time.time()
-            a3 = [a*2 for a in a1 if a > big2]
+            a4 = [a*2 for a in a1]            # map
+            a3 = [a for a in a4 if a > big2]  # filter
             t2 = time.time()
             td = time_delta(t1, t2)
             tlambda.append(td)
-        print_time_stats("filter lambda", tlambda)
+        print_time_stats("unchained map filter list comp", tlambda)
+
+        tlambda = []
+        for i in range(loops):
+            t1 = time.time()
+            a3 = [a for a in a1 if a > big2]  # filter
+            a4 = [a*2 for a in a3]            # map
+            t2 = time.time()
+            td = time_delta(t1, t2)
+            tlambda.append(td)
+        print_time_stats("unchained filter map list comp", tlambda)
+
+        tlambda = []
+        for i in range(loops):
+            t1 = time.time()
+            a3 = [a*2 for a in a1 if a > big2]  # one line filter map
+            t2 = time.time()
+            td = time_delta(t1, t2)
+            tlambda.append(td)
+        print_time_stats("chained filter map list comp", tlambda)
 
 
 # main program

@@ -2,9 +2,12 @@
    to compile:  cc -o loopC -lm loops.c
    to run:      ./loopC  (need chmod a+x loopC)
 
-   include sources on MacOSX are:
+   map run time in C is ~100 times faster than Python.
+
+   sources on MacOSX (as on most Linux systems):
      /usr/include/stdio.h
      /usr/include/sys/time.h
+     /usr/include/math.h
 */
 
 #include <stdio.h>
@@ -34,6 +37,7 @@ int main(int argc, char **argv) {
     }
 
     gettimeofday(&t1, NULL);
+/*  map operation */
     for (int i=0; i<MAX; i++) {
       arr[i] *= 2;
     }
